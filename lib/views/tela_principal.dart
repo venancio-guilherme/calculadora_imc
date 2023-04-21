@@ -1,12 +1,17 @@
-import 'package:calculadora_imc/tela_resultados.dart';
+import 'package:calculadora_imc/views/tela_resultados.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'constantes.dart';
-import 'package:calculadora_imc/calculadora_imc.dart';
-import 'componentes.dart';
+import '../components/botao_inferior.dart';
+import '../components/cartao_padrao.dart';
+import '../components/filho_padrao.dart';
+import '../models/constantes.dart';
+import 'package:calculadora_imc/controllers/calculadora_imc.dart';
 
 class TelaPrincipal extends StatefulWidget {
+  const TelaPrincipal({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _TelaPrincipalState createState() => _TelaPrincipalState();
 }
 
@@ -31,8 +36,9 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'CALCULADORA IMC', style: kEstiloTextoInferior,
+        title: const Text(
+          'CALCULADORA IMC',
+          style: kEstiloTextoInferior,
         ),
       ),
       body: Column(
@@ -52,7 +58,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       cor: sexoSelecionado == Sexo.masculino
                           ? kCorAtivaCartaoPadrao
                           : kCorInativaCartaoPadrao,
-                      filhoCartao: FilhoPadrao(
+                      filhoCartao: const FilhoPadrao(
                           icone: FontAwesomeIcons.mars, texto: 'HOMEM'),
                     ),
                   ),
@@ -68,7 +74,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                       cor: sexoSelecionado == Sexo.feminino
                           ? kCorAtivaCartaoPadrao
                           : kCorInativaCartaoPadrao,
-                      filhoCartao: FilhoPadrao(
+                      filhoCartao: const FilhoPadrao(
                           icone: FontAwesomeIcons.venus, texto: 'MULHER'),
                     ),
                   ),
@@ -84,20 +90,20 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               filhoCartao: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('ALTURA', style: kEstiloTexto),
-                  SizedBox(height: 10.0),
+                  const Text('ALTURA', style: kEstiloTexto),
+                  const SizedBox(height: 10.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(altura.toString(), style: kEstiloNumero),
-                      Text('cm', style: kEstiloTexto),
+                      const Text('cm', style: kEstiloTexto),
                     ],
                   ),
                   Slider(
-                    activeColor: Color(0xFF2D4F5E),
-                    inactiveColor: Color(0XFFB1D4E3),
+                    activeColor: const Color(0xFF2D4F5E),
+                    inactiveColor: const Color(0XFFB1D4E3),
                     onChanged: (double novoValor) {
                       setState(() {
                         altura = novoValor.round();
@@ -118,7 +124,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               children: [
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                       color: kCorAtivaCartaoPadrao,
                       borderRadius: BorderRadius.circular(20.0),
@@ -126,12 +132,15 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('PESO', style: kEstiloTexto,),
+                        const Text(
+                          'PESO',
+                          style: kEstiloTexto,
+                        ),
                         Text(
                           peso.toString(),
                           style: kEstiloNumero,
                         ),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -141,16 +150,16 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                                   peso++;
                                 });
                               },
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               fillColor: kCorContainerInferior,
                               elevation: 6.0,
-                              constraints: BoxConstraints.tightFor(
+                              constraints: const BoxConstraints.tightFor(
                                 width: 56.0,
                                 height: 56.0,
                               ),
-                              child: Icon(FontAwesomeIcons.plus),
+                              child: const Icon(FontAwesomeIcons.plus),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             RawMaterialButton(
@@ -159,14 +168,14 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                                   peso--;
                                 });
                               },
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               fillColor: kCorContainerInferior,
                               elevation: 6.0,
-                              constraints: BoxConstraints.tightFor(
+                              constraints: const BoxConstraints.tightFor(
                                 width: 56.0,
                                 height: 56.0,
                               ),
-                              child: Icon(FontAwesomeIcons.minus),
+                              child: const Icon(FontAwesomeIcons.minus),
                             ),
                           ],
                         )
@@ -176,7 +185,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                 ),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsets.all(10.0),
+                    margin: const EdgeInsets.all(10.0),
                     decoration: BoxDecoration(
                       color: kCorAtivaCartaoPadrao,
                       borderRadius: BorderRadius.circular(20.0),
@@ -184,12 +193,15 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('IDADE', style: kEstiloTexto,),
+                        const Text(
+                          'IDADE',
+                          style: kEstiloTexto,
+                        ),
                         Text(
                           idade.toString(),
                           style: kEstiloNumero,
                         ),
-                        SizedBox(height: 10.0),
+                        const SizedBox(height: 10.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -199,16 +211,16 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                                   idade++;
                                 });
                               },
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               fillColor: kCorContainerInferior,
                               elevation: 6.0,
-                              constraints: BoxConstraints.tightFor(
+                              constraints: const BoxConstraints.tightFor(
                                 width: 56.0,
                                 height: 56.0,
                               ),
-                              child: Icon(FontAwesomeIcons.plus),
+                              child: const Icon(FontAwesomeIcons.plus),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10.0,
                             ),
                             RawMaterialButton(
@@ -217,14 +229,14 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                                   idade--;
                                 });
                               },
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               fillColor: kCorContainerInferior,
                               elevation: 6.0,
-                              constraints: BoxConstraints.tightFor(
+                              constraints: const BoxConstraints.tightFor(
                                 width: 56.0,
                                 height: 56.0,
                               ),
-                              child: Icon(FontAwesomeIcons.minus),
+                              child: const Icon(FontAwesomeIcons.minus),
                             ),
                           ],
                         )
@@ -236,21 +248,23 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
             ),
           ),
           BotaoInferior(
-              aoPressionar: (){
-                CalculadoraIMC calc = CalculadoraIMC(altura: altura, peso: peso);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TelaResultados(
-                  resultadoIMC: calc.calcularIMC(),
-                  resultadoTexto: calc.obterResultado(),
-                  interpretacao: calc.interpretacaoResultado(),
-                  numeroDoIMC: calc.numeroIMC(),
-                )),);
-
+              aoPressionar: () {
+                CalculadoraIMC calc =
+                    CalculadoraIMC(altura: altura, peso: peso);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => TelaResultados(
+                            resultadoIMC: calc.calcularIMC(),
+                            resultadoTexto: calc.obterResultado(),
+                            interpretacao: calc.interpretacaoResultado(),
+                            numeroDoIMC: calc.numeroIMC(),
+                          )),
+                );
               },
-              tituloBotao: 'CALCULAR'
-          ),
+              tituloBotao: 'CALCULAR'),
         ],
       ),
     );
   }
 }
-
