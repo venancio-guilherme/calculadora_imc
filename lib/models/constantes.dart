@@ -19,29 +19,14 @@ TextStyle kEstiloTextoInferior = GoogleFonts.lilitaOne(
 TextStyle kEstiloTitulo = GoogleFonts.lilitaOne(
     color: const Color(0XFF010326), fontSize: 40, fontWeight: FontWeight.w400);
 
-const TextStyle kEstiloTitulo = TextStyle(
-    fontSize: 40.0,
-    color: Color(0XFF010326),
-    fontFamily: 'Lilita',
-    fontWeight: FontWeight.w400);
+TextStyle kEstiloIMC = GoogleFonts.lilitaOne(
+    color: Colors.white, fontSize: 100, fontWeight: FontWeight.w400);
 
-const TextStyle kEstiloIMC = TextStyle(
-    fontSize: 100.0,
-    color: Colors.white,
-    fontFamily: 'Lilita',
-    fontWeight: FontWeight.w400);
+TextStyle kEstiloGrupoIMC = GoogleFonts.lilitaOne(
+    color: Colors.white, fontSize: 40, fontWeight: FontWeight.w400);
 
-const TextStyle kEstiloGrupoIMC = TextStyle(
-    fontSize: 40.0,
-    color: Colors.white,
-    fontFamily: 'Lilita',
-    fontWeight: FontWeight.w400);
-
-const TextStyle kFraseResultado = TextStyle(
-    fontSize: 22.0,
-    color: Colors.white,
-    fontFamily: 'Lilita',
-    fontWeight: FontWeight.w400);
+TextStyle kFraseResultado = GoogleFonts.lilitaOne(
+    color: Colors.white, fontSize: 22, fontWeight: FontWeight.w400);
 
 ThemeData tema = ThemeData.dark().copyWith(
     appBarTheme: const AppBarTheme(

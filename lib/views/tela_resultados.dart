@@ -32,7 +32,7 @@ class TelaResultados extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 margin: const EdgeInsets.only(top: 10.0),
-                child: const Text(
+                child: Text(
                   'Resultado',
                   style: kEstiloTitulo,
                   textAlign: TextAlign.center,
