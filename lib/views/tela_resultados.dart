@@ -20,7 +20,7 @@ class TelaResultados extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'CALCULADORA IMC',
           style: kEstiloTextoInferior,
         ),
@@ -73,7 +73,7 @@ class TelaResultados extends StatelessWidget {
               width: double.infinity,
               height: kAlturaContainerInferior,
               color: kCorContainerInferior,
-              child: const Center(
+              child: Center(
                   child: Text(
                 'RECALCULAR',
                 style: kEstiloTextoInferior,

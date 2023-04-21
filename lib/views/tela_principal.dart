@@ -36,7 +36,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'CALCULADORA IMC',
           style: kEstiloTextoInferior,
         ),
@@ -90,7 +90,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
               filhoCartao: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('ALTURA', style: kEstiloTexto),
+                  Text('ALTURA', style: kEstiloTexto),
                   const SizedBox(height: 10.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +98,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(altura.toString(), style: kEstiloNumero),
-                      const Text('cm', style: kEstiloTexto),
+                      Text('cm', style: kEstiloTexto),
                     ],
                   ),
                   Slider(
@@ -132,7 +132,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           'PESO',
                           style: kEstiloTexto,
                         ),
@@ -193,7 +193,7 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text(
+                        Text(
                           'IDADE',
                           style: kEstiloTexto,
                         ),
